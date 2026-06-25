@@ -1,0 +1,43 @@
+# Ignore build output directory
+/build
+**/build/
+
+
+# Ignore object files and dependent files
+*.o
+*.d
+
+#Ignore logs folder and log files
+/logs
+**/logs/
+*.log
+
+#Ignore lock files
+*.lock
+
+*.bin
+*.pdi
+__pycache__/
+*.pyc
+
+# Ignore generated Vitis workspace state
+/.peers.ini
+/.repo.yaml
+/.vitisWorkspace.json
+/_ide/*
+!/_ide/version.ini
+/.rigel_lopper/
+
+# Ignore generated Vitis platform outputs by default
+/platform/*
+!/platform/vitis-comp.json
+!/platform/hw/
+!/platform/hw/*.xsa
+/platform/hw/sdt/
+/platform/.gitignore
+
+# Ignore generated Vitis application outputs
+/hello_world/.gitignore
+/hello_world/_ide/
+/hello_world/compile_commands.json
+/hello_world/src/compile_commands.json
