@@ -5,10 +5,13 @@ Rebuild this Vitis workspace from source-controlled inputs.
 Usage:
     vitis -s rebuild_workspace.py
     vitis -s rebuild_workspace.py --force
+    
 
 Default mode opens the workspace and builds existing components. Use --force
 when generated platform/application files were intentionally omitted from Git
 and Vitis cannot build the partially restored component directories.
+
+Refer to ./logs/builder.py to modify Workspace configurations
 """
 
 from __future__ import annotations
@@ -21,7 +24,7 @@ from pathlib import Path
 
 import vitis
 
-
+# Workspace configurations
 WORKSPACE = Path(__file__).resolve().parent
 PLATFORM_NAME = "platform"
 APP_NAME = "hello_world"

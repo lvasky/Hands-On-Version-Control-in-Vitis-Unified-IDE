@@ -1,6 +1,8 @@
-# Hands-On Version Control in Vitis Unified IDE
+# Hands-On Version Control in Vitis Unified IDE Embedded Design
 
-本工程使用 Git 管理 Vitis workspace，并通过脚本在新路径下自动重建可生成内容。
+本工程提供Vitis Unified IDE Embedded Design的通用gitignore文件，并在新路径下通过脚本可快速重建。
+
+> !! Vitis Unified IDE 2025.2 版本已测试
 
 ## 首次提交
 
@@ -10,15 +12,8 @@
    - `rebuild_workspace.py`
    - `rebuild_workspace.bat`
    - `README.md`
-3. 在 workspace 根目录执行：
-   ```powershell
-   git status --short --ignored
-   ```
-4. 确认没有异常文件后提交第一版：
-   ```powershell
-   git add .
-   git commit -m "Add Vitis workspace rebuild flow"
-   ```
+3. 系统环境变量添加vitis路径。eg: `C:\AMDDesignTools\2025.2\Vitis\bin\`
+4. 参考本工程./logs/builder.py文件，修改rebuild_workspace.py的配置参数
 
 ## 更换路径后重建
 
@@ -29,13 +24,3 @@
    ```
 
 脚本会自动调用 Vitis 并重建 platform 和 application。
-
-## Vitis 安装路径
-
-脚本默认使用：
-
-```text
-C:\AMDDesignTools\2025.2\Vitis\bin\vitis.bat
-```
-
-如果 Vitis 安装在其他位置，修改 `rebuild_workspace.bat` 中的 `VITIS_BAT`。
